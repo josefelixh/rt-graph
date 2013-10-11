@@ -1,0 +1,14 @@
+@(message: String)(implicit r: RequestHeader)
+
+@main("Welcome to Play") {
+
+    <div id="graph"></div>
+
+    <script src="@routes.Assets.at("javascripts/realtime.js")" type="text/javascript"></script>
+    <script type="text/javascript">
+
+            var wsUrl = "@routes.Application.ws().webSocketURL()";
+            init_ws(wsUrl)
+
+    </script>
+}
